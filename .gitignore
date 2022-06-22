@@ -1,1 +1,7 @@
 
+node_modules
+dist
+.cache
+*.log
+report.*.json
+temp

@@ -1,0 +1,67 @@
+{
+  "name": "@fot/globalstorage",
+  "version": "1.0.0",
+  "description": "store data in cookie and localstorage",
+  "main": "dist/globalstorage.js",
+  "types": "dist/globalstorage.d.ts",
+  "engines": {
+    "node": ">=12.16.x",
+    "yarn": ">=1.21.x"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "dev": "http-server",
+    "upver": "ncu -u && yarn install",
+    "gen:idx": "cti create ./src && cti create ./example && rm -f ./example/index.ts",
+    "lint": "tsc --noEmit && eslint '*/**/*.ts' --quiet --fix",
+    "prepublish": "rimraf dist && mkdir dist && tsc && mv temp/* dist/ && rimraf temp"
+  },
+  "author": "http://www.fot.sg",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/cls-hooked": "^4.3.0",
+    "@types/dot-object": "^2.1.1",
+    "@types/faker": "^4.1.11",
+    "@types/jest": "^25.2.1",
+    "@types/js-cookie": "^2.2.6",
+    "@types/js-yaml": "^3.12.3",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "create-ts-index": "^1.13.2",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "faker": "^4.1.0",
+    "http-server": "^0.12.3",
+    "husky": "^4.2.5",
+    "jest": "^25.0.0",
+    "npm-check-updates": "^5.0.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.5.1",
+    "ts-node": "^8.10.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.153",
+    "eventemitter3": "^4.0.7",
+    "js-cookie": "^2.2.1",
+    "store2": "^2.11.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}

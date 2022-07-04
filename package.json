@@ -1,5 +1,5 @@
 {
-  "name": "@fot/globalstorage",
+  "name": "@gaias/globalstorage",
   "version": "1.0.0",
   "description": "store data in cookie and localstorage",
   "main": "dist/globalstorage.js",
